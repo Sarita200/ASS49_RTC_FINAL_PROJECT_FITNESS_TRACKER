@@ -1,0 +1,39 @@
+.Container{
+  height: 100%;
+  display: flex;
+  @media (max-width:7000px){
+  flex-direction: row;
+  }
+}
+.Left{
+  position: relative; 
+  flex: 1;
+  background: blue;
+  @media (max-width:7000px){
+  }
+}
+.Right{
+  flex: 1;
+  position: realative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap:16px;
+  text-align:center;
+  justify-content: center;
+}
+.Text{
+  font-size: 16px;
+  text-align: center;
+  margin-top: 16px;
+  color: black;
+  @media (max-width: 400px){
+  font-size:14px;
+  } 
+}
+.TextButton{
+  color: rgb(76, 76, 214);
+  cursor:pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}

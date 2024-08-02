@@ -4,25 +4,7 @@ import LogoImage from "./../utils/Images/Logo.png";
 import AuthImage from "./../utils/Images/AuthImage.jpg";
 import SignIn from '../components/SignIn';
 import SignUp from '../components/SignUp';
-
-const Container = styled.div`
-  flex: 1,
-  height: 100%,
-  display: flex,
-  background: ${({ theme }) => theme.bg};
-  @media (max-width:7000px){
-  flex-direction: column;
-  }
-`;
-
-const Left = styled.div`
-  position: relative; a
-  flex: 1;
-  background: blue;
-  @media (max-width:7000px){
-    display: none;
-  }
-`;
+import './Authentication.css'
 
 const Logo = styled.img`
   position: absolute;
@@ -38,17 +20,6 @@ const Image = styled.img`
   width: 100%;
 `;
 
-const Right = styled.div`
-  flex: 1;
-  position realative;
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-  gap:16px;
-  text-align:center;
-  align-item: center;
-  justify-content: center;
-`;
 const Text = styled.div`
   font-size: 16px;
   text-align: center;
@@ -69,18 +40,18 @@ const TextButton = styled.span`
 const Authentication = () => {
   const [login,setLogin] = useState(false);
   return (
-    <Container>
-        <Left>
+    <div className='Container'>
+        <div className='Left'>
           <Logo src={ LogoImage }/>
           <Image src={AuthImage}/>
-        </Left>
-        <Right>
+        </div>
+        <div className='Right'>
           { !login ?( 
             <>
             <SignIn/>SignIn
-          <Text>
-            Don't have an account ? <TextButton onClick={() =>setLogin(true)}>SignUp</TextButton>
-          </Text>
+          <p className='Text'>
+            Don't have an account ? <span className='TextButton' onClick={() =>setLogin(true)}>SignUp</span>
+          </p>
             </> )
             : (
               <>
@@ -88,8 +59,8 @@ const Authentication = () => {
                 <Text>Already have an account? <TextButton onClick={() =>setLogin(false)}>SignIn</TextButton></Text>
               </>
             ) }
-        </Right>
-    </Container>
+        </div>
+    </div>
   )
 }
 
