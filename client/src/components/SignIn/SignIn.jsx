@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import TextInput from './TextInput';
-import Button from './Button';
-
+import TextInput from '../TextInput';
+import Button from '../Button';
 
 const Container=styled.div`
-
 `;
 const Title = styled.div`
     font-size:30px;
@@ -18,18 +16,22 @@ const Span=styled.div`
     color: ${({ theme }) => theme.text_secondary + 90};
 `;
 
-const SignUp =() => {
+const SignIn =() => {
   return (
     <Container>
         <div>
             <Title>Welcome to Fitness Tracker💪</Title>
-            <Span>Please login with your details here</Span>
+            <Span>Please signin with your details here</Span>
         </div>
         <div style={{
             display: "flex",
             gap: "20px",
             flexDirection: "column"
         }}>
+            <TextInput
+            placeholder="Enter FullName"
+            />
+
             <TextInput
             placeholder="Enter Your Email"
             />
@@ -38,10 +40,10 @@ const SignUp =() => {
             placeholder="Enter Your Password"
             password
             />
-            <Button text="SignUp"/>
+            <Button text="SignIn"/>
         </div>
    </Container>
   )
 }
 
-export default SignUp
+export default SignIn

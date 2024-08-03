@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import LogoImage from "./../utils/Images/Logo.png";
 import AuthImage from "./../utils/Images/AuthImage.jpg";
-import SignIn from '../components/SignIn';
+import SignIn from '../components/SignIn/SignIn';
 import SignUp from '../components/SignUp';
 import './Authentication.css'
 

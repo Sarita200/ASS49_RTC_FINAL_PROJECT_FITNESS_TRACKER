@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {ThemeProvider , styled} from "styled-components";
 import { lightTheme } from "./utils/Themes";
 import { BrowserRouter } from "react-router-dom"
 import Authentication from './pages/Authentication';
+import Navbar from './components/Navbar/Navbar';
 
 const Container = styled.div`
     width: 100%;
@@ -17,13 +18,21 @@ const Container = styled.div`
 `;
 
 function App() {
+  const [user , setUser] = useState(true)
   return (
     <div>
         <ThemeProvider theme={ lightTheme }>
             <BrowserRouter>
-            <Container>
+            {user ? (
+              <Container>
+                <Navbar/>
+              </Container>
+            ) : (
+              <Container>
                  <Authentication />
             </Container>
+            )
+            }
             </BrowserRouter>
         </ThemeProvider>
     </div>
